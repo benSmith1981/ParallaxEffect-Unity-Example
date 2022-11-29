@@ -12,6 +12,7 @@ public class Parallax : MonoBehaviour {
         length = GetComponent<SpriteRenderer>().bounds.size.x; //size of the sprite
     }
     void FixedUpdate () {
+        cam.transform.position = new Vector2(cam.transform.position.x + 0.1f,cam.transform.position.y);
         float temp = (cam.transform.position.x * (1 - parallaxEffect)); //how far we moved relative to camera.. 1- parallax is rel to camera
         float dist = (cam.transform.position.x * parallaxEffect);//how far we travelled
         //transform the current parallax 
